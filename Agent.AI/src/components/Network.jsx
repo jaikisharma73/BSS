@@ -349,14 +349,14 @@ const Network = () => {
         </div>
         <div className='flex gap-3 flex-shrink-0'>
           <a
-            href='https://api.whatsapp.com/send?phone=+919450221034&text=Hey there! I need security services'
+            href='https://api.whatsapp.com/send?phone=+918840390443&text=Hey there! I need security services'
             target='_blank'
             className='bg-white text-red-700 font-semibold text-sm px-6 py-3 rounded-full hover:scale-105 transition-all flex items-center gap-2'
           >
             💬 WhatsApp Us
           </a>
           <a
-            href='tel:+919450221034'
+            href='tel:+918840390443'
             className='border-2 border-white text-white text-sm px-6 py-3 rounded-full hover:bg-white/10 transition-all'
           >
             📞 Call Now

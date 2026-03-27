@@ -25,7 +25,7 @@ const Navbar = ({ theme, setTheme }) => {
         <a onClick={() => setSidebarOpen(false)} href="#network" className='sm:hover:border-b'>Network</a>
         <a onClick={() => setSidebarOpen(false)} href="#contact-us" className='sm:hover:border-b'>Contact</a>
         <button
-          onClick={() => window.location.href = "tel:+919450221034"}
+          onClick={() => window.location.href = "tel:+918840390443"}
           className="flex items-center gap-2 text-black dark:text-white border border-gray-400 px-5 py-2 rounded-lg
              max-sm:fixed max-sm:top-3 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:z-30
              sm:static bg-white dark:bg-black"
@@ -40,7 +40,7 @@ const Navbar = ({ theme, setTheme }) => {
 
         <img src={theme === 'dark' ? assets.menu_icon_dark : assets.menu_icon} alt="" onClick={() => setSidebarOpen(true)} className='w-8 sm:hidden cursor-pointer' />
 
-        <a href="https://api.whatsapp.com/send?phone=+919450221034&text=Hey there! I want to book security" target="_blank" className='text-sm max-sm:hidden flex items-center gap-2 bg-red-700 text-white px-6 py-2 rounded-full cursor-pointer hover:scale-103 transition-all'>
+        <a href="https://api.whatsapp.com/send?phone=+918840390443&text=Hey there! I want to book security" target="_blank" className='text-sm max-sm:hidden flex items-center gap-2 bg-red-700 text-white px-6 py-2 rounded-full cursor-pointer hover:scale-103 transition-all'>
           Connect <img src={assets.arrow_icon} width={14} alt="" />
         </a>
       </div>

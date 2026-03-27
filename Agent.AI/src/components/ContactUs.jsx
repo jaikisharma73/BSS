@@ -63,14 +63,14 @@ const ContactUs = () => {
         viewport={{ once: true }}
         className='flex flex-wrap justify-center gap-4 w-full max-w-2xl'
       >
-        <a href='tel:+919450221034' className='flex items-center gap-3 border border-gray-200 dark:border-gray-700 rounded-xl px-5 py-3 hover:border-red-500 transition-colors bg-white dark:bg-gray-900 shadow-sm hover:shadow-md'>
+        <a href='tel:+918840390443' className='flex items-center gap-3 border border-gray-200 dark:border-gray-700 rounded-xl px-5 py-3 hover:border-red-500 transition-colors bg-white dark:bg-gray-900 shadow-sm hover:shadow-md'>
           <span className='text-xl'>📞</span>
           <div>
             <p className='text-xs text-gray-400 dark:text-gray-500'>Call Us</p>
-            <p className='text-sm font-semibold text-gray-800 dark:text-white'>+91 94502 21034</p>
+            <p className='text-sm font-semibold text-gray-800 dark:text-white'>+91 88403 90443</p>
           </div>
         </a>
-        <a href='https://api.whatsapp.com/send?phone=+919450221034&text=Hey there!' target='_blank' className='flex items-center gap-3 border border-gray-200 dark:border-gray-700 rounded-xl px-5 py-3 hover:border-green-500 transition-colors bg-white dark:bg-gray-900 shadow-sm hover:shadow-md'>
+        <a href='https://api.whatsapp.com/send?phone=+918840390443&text=Hey there!' target='_blank' className='flex items-center gap-3 border border-gray-200 dark:border-gray-700 rounded-xl px-5 py-3 hover:border-green-500 transition-colors bg-white dark:bg-gray-900 shadow-sm hover:shadow-md'>
           <span className='text-xl'>💬</span>
           <div>
             <p className='text-xs text-gray-400 dark:text-gray-500'>WhatsApp</p>

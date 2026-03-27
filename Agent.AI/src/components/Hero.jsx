@@ -15,8 +15,8 @@ const slides = [
       </>
     ),
     sub: 'Your Safety Is Our Priority',
-    cta: { label: '📞 Call Now', href: 'tel:+919450221034', internal: false },
-    cta2: { label: '💬 WhatsApp Us', href: 'https://api.whatsapp.com/send?phone=+919450221034&text=Hey! I need security services', internal: false },
+    cta: { label: '📞 Call Now', href: 'tel:+918840390443', internal: false },
+    cta2: { label: '💬 WhatsApp Us', href: 'https://api.whatsapp.com/send?phone=+918840390443&text=Hey! I need security services', internal: false },
   },
   {
     badge: '500+ Deployed Personnel',

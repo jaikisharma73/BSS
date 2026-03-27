@@ -1,6 +1,46 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import assets from '../assets/assets'
+
+/* ── Scroll-triggered counting number ── */
+const CountUp = ({ target, suffix = '', duration = 1800 }) => {
+  const [count, setCount] = useState(0)
+  const ref = useRef(null)
+  const started = useRef(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true
+          const start = performance.now()
+          const animate = (now) => {
+            const elapsed = now - start
+            const progress = Math.min(elapsed / duration, 1)
+            // Ease-out cubic
+            const eased = 1 - Math.pow(1 - progress, 3)
+            setCount(Math.floor(eased * target))
+            if (progress < 1) requestAnimationFrame(animate)
+            else setCount(target)
+          }
+          requestAnimationFrame(animate)
+        }
+      },
+      { threshold: 0.5 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [target, duration])
+
+  return (
+    <span ref={ref}>
+      {count}{suffix}
+    </span>
+  )
+}
 
 const jobListings = [
   {
@@ -135,7 +175,7 @@ const Careers = () => {
         </p>
       </motion.div>
 
-      {/* Stats row */}
+      {/* Stats row — animated count-up on scroll */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -144,13 +184,15 @@ const Careers = () => {
         className='flex flex-wrap justify-center gap-8 py-6'
       >
         {[
-          { value: '500+', label: 'Deployed Personnel' },
-          { value: '50+', label: 'Client Sites' },
-          { value: '5+', label: 'Years of Service' },
-          { value: '100%', label: 'Background Verified' },
+          { target: 500, suffix: '+', label: 'Deployed Personnel' },
+          { target: 50,  suffix: '+', label: 'Client Sites' },
+          { target: 5,   suffix: '+', label: 'Years of Service' },
+          { target: 100, suffix: '%', label: 'Background Verified' },
         ].map((stat, i) => (
           <div key={i} className='text-center'>
-            <p className='text-3xl font-bold bg-gradient-to-r from-[#ae1c1c] to-[#4D8CEE] bg-clip-text text-transparent'>{stat.value}</p>
+            <p className='text-3xl font-bold bg-gradient-to-r from-[#ae1c1c] to-[#4D8CEE] bg-clip-text text-transparent'>
+              <CountUp target={stat.target} suffix={stat.suffix} duration={1800} />
+            </p>
             <p className='text-xs text-gray-500 dark:text-gray-400 mt-1'>{stat.label}</p>
           </div>
         ))}
