@@ -20,7 +20,7 @@ const App = () => {
       <Navbar theme={theme} setTheme={setTheme} />
       <Hero />
       <About />
-      <TrustedBy />
+      {/* <TrustedBy /> */}
       <Services />
       <Careers />
       <Network />
