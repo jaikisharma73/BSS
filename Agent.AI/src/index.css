@@ -12,3 +12,173 @@
 @theme{
   --color-primary: #5044E5;
 }
+
+/* ───── Security Animation Keyframes ───── */
+
+/* Radar sweep rotation */
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.animate-radar-sweep {
+  animation: radar-sweep 3s linear infinite;
+}
+
+/* Pulse glow effect */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; filter: drop-shadow(0 0 2px currentColor); }
+  50%      { opacity: 1;   filter: drop-shadow(0 0 8px currentColor); }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Shield draw (stroke-dashoffset animation) */
+@keyframes shield-draw {
+  from { stroke-dashoffset: 200; }
+  to   { stroke-dashoffset: 0; }
+}
+.animate-shield-draw {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: shield-draw 1.5s ease-out forwards;
+}
+
+/* Shimmer / glint effect */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+/* Float drift (gentle floating) */
+@keyframes float-drift {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25%      { transform: translateY(-12px) rotate(2deg); }
+  50%      { transform: translateY(-5px) rotate(-1deg); }
+  75%      { transform: translateY(-15px) rotate(1.5deg); }
+}
+.animate-float {
+  animation: float-drift 6s ease-in-out infinite;
+}
+
+/* Border glow sweep */
+@keyframes border-glow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-border-glow {
+  background: linear-gradient(90deg, #ae1c1c, #4D8CEE, #ae1c1c);
+  background-size: 200% 200%;
+  animation: border-glow 3s ease infinite;
+}
+
+/* Shield fill animation */
+@keyframes shield-fill {
+  from { opacity: 0; }
+  to   { opacity: 0.15; }
+}
+.animate-shield-fill {
+  animation: shield-fill 1s ease-out forwards;
+}
+
+/* Marker expanding pulse rings */
+@keyframes marker-pulse {
+  0%   { r: 4; opacity: 0.6; }
+  100% { r: 20; opacity: 0; }
+}
+.animate-marker-pulse {
+  animation: marker-pulse 1.8s ease-out infinite;
+}
+
+/* Scan line sweep for navbar */
+@keyframes scan-across {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+.animate-scan-across {
+  animation: scan-across 2s ease-in-out forwards;
+}
+
+/* CTA button pulse */
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(174, 28, 28, 0.4); }
+  50%      { box-shadow: 0 0 0 10px rgba(174, 28, 28, 0); }
+}
+.animate-cta-pulse {
+  animation: cta-pulse 2.5s ease-in-out infinite;
+}
+
+/* Link sweep underline */
+@keyframes sweep-underline {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Verified stamp effect */
+@keyframes stamp {
+  0%   { transform: scale(2.5) rotate(-20deg); opacity: 0; }
+  60%  { transform: scale(0.9) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+.animate-stamp {
+  animation: stamp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Connection line draw */
+@keyframes draw-line {
+  from { stroke-dashoffset: 500; }
+  to   { stroke-dashoffset: 0; }
+}
+.animate-draw-line {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: draw-line 2s ease-out forwards;
+}
+
+/* Smooth hover glow for nav links */
+.nav-glow-hover {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-glow-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ae1c1c, #4D8CEE);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.nav-glow-hover:hover::after {
+  transform: scaleX(1);
+}
+
+/* Footer link sweep effect */
+.footer-link-sweep {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.footer-link-sweep::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #ae1c1c, #4D8CEE);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.footer-link-sweep:hover::before {
+  transform: scaleX(1);
+}

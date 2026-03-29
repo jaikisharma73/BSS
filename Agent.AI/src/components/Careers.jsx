@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import assets from '../assets/assets'
+import { RadarPulse, ShieldBadge, FloatingSecurityIcons } from './SecurityAnimations'
 
 /* ── Scroll-triggered counting number ── */
 const CountUp = ({ target, suffix = '', duration = 1800 }) => {
@@ -99,11 +100,24 @@ const JobCard = ({ job, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className='border border-gray-200 dark:border-gray-700 rounded-2xl p-6 bg-white dark:bg-gray-900 shadow-sm hover:shadow-md transition-shadow'
+      className='relative border border-gray-200 dark:border-gray-700 rounded-2xl p-6 bg-white dark:bg-gray-900 shadow-sm hover:shadow-md transition-shadow group overflow-hidden'
     >
-      <div className='flex flex-col sm:flex-row sm:items-start justify-between gap-4'>
+      {/* Subtle glow on hover */}
+      <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-red-700/0 to-[#4D8CEE]/0 group-hover:from-red-700/20 group-hover:to-[#4D8CEE]/20 transition-all duration-500 pointer-events-none" />
+
+      <div className='flex flex-col sm:flex-row sm:items-start justify-between gap-4 relative'>
         <div className='flex-1'>
           <div className='flex items-center gap-3 flex-wrap mb-2'>
+            {/* Verified stamp animation */}
+            <motion.div
+              initial={{ scale: 2.5, rotate: -20, opacity: 0 }}
+              whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 + index * 0.1, type: 'spring', stiffness: 200 }}
+              viewport={{ once: true }}
+              className="text-green-600 dark:text-green-400 text-xs font-bold"
+            >
+              ✅
+            </motion.div>
             <h3 className='text-lg font-semibold text-gray-800 dark:text-white'>{job.title}</h3>
             <span className='text-xs px-3 py-1 rounded-full bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-400 font-medium'>{job.type}</span>
           </div>
@@ -114,18 +128,22 @@ const JobCard = ({ job, index }) => {
           </div>
         </div>
         <div className='flex gap-3 items-center'>
-          <button
+          <motion.button
             onClick={() => setExpanded(!expanded)}
             className='text-sm border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300'
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             {expanded ? 'Less ▲' : 'Details ▼'}
-          </button>
-          <a
+          </motion.button>
+          <motion.a
             href='#contact-us'
-            className='text-sm bg-gradient-to-r from-red-700 to-[#4D8CEE] text-white px-5 py-2 rounded-full hover:scale-105 transition-all cursor-pointer'
+            className='text-sm bg-gradient-to-r from-red-700 to-[#4D8CEE] text-white px-5 py-2 rounded-full cursor-pointer'
+            whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(174,28,28,0.4)' }}
+            whileTap={{ scale: 0.95 }}
           >
             Apply Now
-          </a>
+          </motion.a>
         </div>
       </div>
 
@@ -143,9 +161,15 @@ const JobCard = ({ job, index }) => {
               <h4 className='text-sm font-semibold text-gray-700 dark:text-white mb-2'>Requirements:</h4>
               <ul className='space-y-1'>
                 {job.requirements.map((req, i) => (
-                  <li key={i} className='text-sm text-gray-500 dark:text-gray-400 flex items-center gap-2'>
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -15 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className='text-sm text-gray-500 dark:text-gray-400 flex items-center gap-2'
+                  >
                     <span className='text-red-600'>✓</span> {req}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>
@@ -160,6 +184,8 @@ const Careers = () => {
   return (
     <div id='careers' className='relative flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-700 dark:text-white'>
 
+      <FloatingSecurityIcons count={6} />
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -167,34 +193,45 @@ const Careers = () => {
         viewport={{ once: true }}
         className='text-center'
       >
-        <h1 className='text-3xl sm:text-5xl font-medium mb-4'>
-          Join Our <span className='bg-gradient-to-r from-[#ae1c1c] to-[#4D8CEE] bg-clip-text text-transparent'>Team</span>
-        </h1>
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <ShieldBadge size={42} />
+          <h1 className='text-3xl sm:text-5xl font-medium'>
+            Join Our <span className='bg-gradient-to-r from-[#ae1c1c] to-[#4D8CEE] bg-clip-text text-transparent'>Team</span>
+          </h1>
+        </div>
         <p className='text-sm sm:text-base text-gray-500 dark:text-white/70 max-w-2xl mx-auto'>
           Be part of a professional security force committed to safety and excellence. We're actively hiring across multiple roles in Uttar Pradesh.
         </p>
       </motion.div>
 
-      {/* Stats row — animated count-up on scroll */}
+      {/* Stats row with radar accent */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.2 }}
         viewport={{ once: true }}
-        className='flex flex-wrap justify-center gap-8 py-6'
+        className='relative flex flex-wrap justify-center gap-8 py-6'
       >
+        {/* Radar accent behind stats */}
+        <RadarPulse size={200} className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30" />
+
         {[
           { target: 500, suffix: '+', label: 'Deployed Personnel' },
           { target: 50,  suffix: '+', label: 'Client Sites' },
           { target: 5,   suffix: '+', label: 'Years of Service' },
           { target: 100, suffix: '%', label: 'Background Verified' },
         ].map((stat, i) => (
-          <div key={i} className='text-center'>
+          <motion.div
+            key={i}
+            className='text-center relative z-10'
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
             <p className='text-3xl font-bold bg-gradient-to-r from-[#ae1c1c] to-[#4D8CEE] bg-clip-text text-transparent'>
               <CountUp target={stat.target} suffix={stat.suffix} duration={1800} />
             </p>
             <p className='text-xs text-gray-500 dark:text-gray-400 mt-1'>{stat.label}</p>
-          </div>
+          </motion.div>
         ))}
       </motion.div>
 
@@ -211,13 +248,22 @@ const Careers = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className='mt-6 text-center bg-gradient-to-r from-red-700/10 to-[#4D8CEE]/10 border border-red-200 dark:border-red-900 rounded-2xl p-8 w-full'
+        className='mt-6 text-center bg-gradient-to-r from-red-700/10 to-[#4D8CEE]/10 border border-red-200 dark:border-red-900 rounded-2xl p-8 w-full relative overflow-hidden'
       >
+        {/* Shield animation in CTA */}
+        <div className="absolute right-6 top-4 opacity-20">
+          <ShieldBadge size={64} />
+        </div>
         <h3 className='text-xl font-semibold mb-2'>Don't see a perfect fit?</h3>
         <p className='text-sm text-gray-500 dark:text-gray-400 mb-5'>Send us your details and we'll reach out when a suitable opportunity opens up.</p>
-        <a href='#contact-us' className='inline-flex items-center gap-2 bg-gradient-to-r from-red-700 to-[#4D8CEE] text-white px-8 py-3 rounded-full hover:scale-105 transition-all text-sm font-medium'>
+        <motion.a
+          href='#contact-us'
+          className='inline-flex items-center gap-2 bg-gradient-to-r from-red-700 to-[#4D8CEE] text-white px-8 py-3 rounded-full text-sm font-medium animate-cta-pulse'
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
           Contact Us <img src={assets.arrow_icon} width={12} alt='' />
-        </a>
+        </motion.a>
       </motion.div>
     </div>
   )
