@@ -30,9 +30,26 @@ const Navbar = ({ theme, setTheme }) => {
 
       <img src={theme === 'dark' ? assets.logos : assets.logos} className=' h-15 w-auto sm:h-20' alt='' />
 
-      <div className={`text-gray-700 dark:text-white sm:text-sm ${!sidebarOpen ? 'max-sm:w-0 overflow-hidden' : 'max-sm:w-60 max-sm:pl-10'} max-sm:fixed top-0 bottom-0 right-0 max-sm:min-h-screen max-sm:h-full max-sm:flex-col max-sm:bg-black max-sm:text-white max-sm:pt-20 flex sm:items-center gap-5 transition-all`}>
+      {/* Mobile sidebar backdrop overlay */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 sm:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
 
-        <img src={assets.close_icon} alt="" className='w-5 absolute right-4 top-4 sm:hidden cursor-pointer' onClick={() => setSidebarOpen(false)} />
+      <div className={`sm:text-sm ${!sidebarOpen ? 'max-sm:w-0 max-sm:overflow-hidden max-sm:opacity-0' : 'max-sm:w-64 max-sm:pl-10 max-sm:opacity-100'} max-sm:fixed top-0 bottom-0 right-0 max-sm:min-h-screen max-sm:h-full max-sm:flex-col max-sm:bg-white max-sm:dark:bg-gray-900 max-sm:text-gray-800 max-sm:dark:text-white max-sm:pt-20 max-sm:shadow-2xl max-sm:z-50 flex sm:items-center gap-5 transition-all duration-300 text-gray-700 dark:text-white`}>
+
+        {/* Close button - always visible with proper contrast */}
+        <button
+          onClick={() => setSidebarOpen(false)}
+          className='absolute right-4 top-4 sm:hidden cursor-pointer w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors'
+          aria-label="Close menu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
 
         <a onClick={() => setSidebarOpen(false)} href="#" className='nav-glow-hover sm:hover:border-b-0'>Home</a>
         <a onClick={() => setSidebarOpen(false)} href="#services" className='nav-glow-hover sm:hover:border-b-0'>Services</a>
@@ -40,9 +57,9 @@ const Navbar = ({ theme, setTheme }) => {
         <a onClick={() => setSidebarOpen(false)} href="#network" className='nav-glow-hover sm:hover:border-b-0'>Network</a>
         <a onClick={() => setSidebarOpen(false)} href="#contact-us" className='nav-glow-hover sm:hover:border-b-0'>Contact</a>
         <motion.button
-          onClick={() => window.location.href = "tel:+918840390443"}
-          className="flex items-center gap-2 text-black dark:text-white border border-gray-400 px-5 py-2 rounded-lg
-             max-sm:fixed max-sm:top-3 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:z-30
+          onClick={() => { setSidebarOpen(false); window.location.href = "tel:+918840390443"; }}
+          className="flex items-center gap-2 text-gray-800 dark:text-white border border-gray-400 dark:border-gray-600 px-5 py-2 rounded-lg
+             max-sm:mt-4
              sm:static bg-white dark:bg-black"
           whileHover={{ scale: 1.05, boxShadow: '0 0 12px rgba(174,28,28,0.3)' }}
           whileTap={{ scale: 0.95 }}
