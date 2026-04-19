@@ -161,11 +161,11 @@ const ContactUs = () => {
           <div className='flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 focus-within:border-red-500 dark:focus-within:border-red-500 transition-colors'>
             <span className='self-center text-gray-500 text-sm'>🎯</span>
             <select name='purpose' className='w-full p-3 text-sm outline-none bg-transparent text-gray-700 dark:text-white' required>
-              <option value=''>Select purpose...</option>
-              <option value='Hiring Guards'>Hire Security Guards</option>
-              <option value='Event Security'>Event / Bouncer Booking</option>
-              <option value='Apply for Job'>Apply for a Job</option>
-              <option value='General Inquiry'>General Inquiry</option>
+              <option className='dark:bg-gray-900' value=''>Select purpose...</option>
+              <option className='dark:bg-gray-900' value='Hiring Guards'>Hire Security Guards</option>
+              <option className='dark:bg-gray-900' value='Event Security'>Event / Bouncer Booking</option>
+              <option className='dark:bg-gray-900' value='Apply for Job'>Apply for a Job</option>
+              <option className='dark:bg-gray-900' value='General Inquiry'>General Inquiry</option>
             </select>
           </div>
         </motion.div>

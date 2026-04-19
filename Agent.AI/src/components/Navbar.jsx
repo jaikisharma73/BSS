@@ -57,11 +57,12 @@ const Navbar = ({ theme, setTheme }) => {
 
         {/* Desktop nav links */}
         <div className='hidden sm:flex items-center gap-5 text-gray-700 dark:text-white text-sm'>
-          <a href="#" className='nav-glow-hover sm:hover:border-b-0'>Home</a>
-          <a href="#services" className='nav-glow-hover sm:hover:border-b-0'>Services</a>
-          <a href="#careers" className='nav-glow-hover sm:hover:border-b-0'>Careers</a>
-          <a href="#network" className='nav-glow-hover sm:hover:border-b-0'>Network</a>
-          <a href="#contact-us" className='nav-glow-hover sm:hover:border-b-0'>Contact</a>
+          <a href="/" className='nav-glow-hover sm:hover:border-b-0'>Home</a>
+          <a href="/#services" className='nav-glow-hover sm:hover:border-b-0'>Services</a>
+          <a href="/gallery" className='nav-glow-hover sm:hover:border-b-0'>Gallery</a>
+          <a href="/#careers" className='nav-glow-hover sm:hover:border-b-0'>Careers</a>
+          <a href="/#network" className='nav-glow-hover sm:hover:border-b-0'>Network</a>
+          <a href="/#contact-us" className='nav-glow-hover sm:hover:border-b-0'>Contact</a>
           <motion.button
             onClick={() => window.location.href = "tel:+918840390443"}
             className="flex items-center gap-2 text-black dark:text-white border border-gray-400 px-5 py-2 rounded-lg bg-white dark:bg-black"
@@ -131,11 +132,12 @@ const Navbar = ({ theme, setTheme }) => {
           </svg>
         </button>
 
-        <a onClick={() => setSidebarOpen(false)} href="#" className='nav-glow-hover'>Home</a>
-        <a onClick={() => setSidebarOpen(false)} href="#services" className='nav-glow-hover'>Services</a>
-        <a onClick={() => setSidebarOpen(false)} href="#careers" className='nav-glow-hover'>Careers</a>
-        <a onClick={() => setSidebarOpen(false)} href="#network" className='nav-glow-hover'>Network</a>
-        <a onClick={() => setSidebarOpen(false)} href="#contact-us" className='nav-glow-hover'>Contact</a>
+        <a onClick={() => setSidebarOpen(false)} href="/" className='nav-glow-hover'>Home</a>
+        <a onClick={() => setSidebarOpen(false)} href="/#services" className='nav-glow-hover'>Services</a>
+        <a onClick={() => setSidebarOpen(false)} href="/gallery" className='nav-glow-hover'>Gallery</a>
+        <a onClick={() => setSidebarOpen(false)} href="/#careers" className='nav-glow-hover'>Careers</a>
+        <a onClick={() => setSidebarOpen(false)} href="/#network" className='nav-glow-hover'>Network</a>
+        <a onClick={() => setSidebarOpen(false)} href="/#contact-us" className='nav-glow-hover'>Contact</a>
 
         {/* Call Now button inside sidebar */}
         <motion.button
