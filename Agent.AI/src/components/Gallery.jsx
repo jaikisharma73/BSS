@@ -10,32 +10,38 @@ const galleryData = [
   {
     id: 1,
     title: "Event Security",
-    description: "Professional security personnel ensuring the safety of large scale events and gatherings."
+    description: "Professional security personnel ensuring the safety of large scale events and gatherings.",
+    image: sec1
   },
   {
     id: 2,
     title: "Corporate Protection",
-    description: "Discrete and effective security solutions for corporate offices and executive protection."
+    description: "Discrete and effective security solutions for corporate offices and executive protection.",
+    image: sec2
   },
   {
     id: 3,
     title: "Surveillance Systems",
-    description: "State-of-the-art monitoring and CCTV systems with 24/7 technical support."
+    description: "State-of-the-art monitoring and CCTV systems with 24/7 technical support.",
+    image: sec3
   },
   {
     id: 4,
     title: "Access Control",
-    description: "Advanced biometric and card-based access control systems for secure facilities."
+    description: "Advanced biometric and card-based access control systems for secure facilities.",
+    image: sec4
   },
   {
     id: 5,
     title: "Mobile Patrol",
-    description: "Rapid response mobile units providing neighborhood and perimeter security checks."
+    description: "Rapid response mobile units providing neighborhood and perimeter security checks.",
+    image: sec1
   },
   {
     id: 6,
     title: "VIP Escort",
-    description: "Close protection services ensuring secure transportation and personal safety."
+    description: "Close protection services ensuring secure transportation and personal safety.",
+    image: sec2
   }
 ];
 
