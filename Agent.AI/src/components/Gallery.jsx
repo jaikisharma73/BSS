@@ -5,7 +5,7 @@ import Title from './Title'
 const galleryData = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1541888031535-715ac9ebf16a?w=800&auto=format&fit=crop&q=80",
+    image: "",
     title: "Event Security",
     description: "Professional security personnel ensuring the safety of large scale events and gatherings."
   },
@@ -58,8 +58,8 @@ const Gallery = () => {
             className='bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800'
           >
             <div className='relative overflow-hidden group h-64'>
-              <motion.img 
-                src={item.image} 
+              <motion.img
+                src={item.image}
                 alt={item.title}
                 className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
               />
@@ -69,7 +69,7 @@ const Gallery = () => {
                 <p className='text-white/80 text-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-100'>{item.description}</p>
               </div>
             </div>
-            
+
             {/* Always visible on mobile/tablet */}
             <div className='p-6 lg:hidden'>
               <h3 className='font-bold text-xl mb-2 text-gray-900 dark:text-white'>{item.title}</h3>

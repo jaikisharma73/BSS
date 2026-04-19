@@ -25,11 +25,12 @@ const Footer = ({ theme }) => {
           />
           <p className='max-w-md'>Need security for an event? We help you hire verified guards and professional bouncers quickly and easily</p>
           <ul className='flex flex-wrap gap-4 sm:gap-6'>
-            <li><a className='footer-link-sweep hover:text-red-700' href="#hero">Home</a></li>
-            <li><a className='footer-link-sweep hover:text-red-700' href="#services">Services</a></li>
-            <li><a className='footer-link-sweep hover:text-red-700' href="#careers">Careers</a></li>
-            <li><a className='footer-link-sweep hover:text-red-700' href="#network">Network</a></li>
-            <li><a className='footer-link-sweep hover:text-red-700' href="#contact-us">Contact</a></li>
+            <li><a className='footer-link-sweep hover:text-red-700' href="/">Home</a></li>
+            <li><a className='footer-link-sweep hover:text-red-700' href="/#services">Services</a></li>
+            <li><a className='footer-link-sweep hover:text-red-700' href="/gallery">Gallery</a></li>
+            <li><a className='footer-link-sweep hover:text-red-700' href="/#careers">Careers</a></li>
+            <li><a className='footer-link-sweep hover:text-red-700' href="/#network">Network</a></li>
+            <li><a className='footer-link-sweep hover:text-red-700' href="/#contact-us">Contact</a></li>
           </ul>
         </div>
         <div className='text-gray-600 dark:text-gray-400'>
