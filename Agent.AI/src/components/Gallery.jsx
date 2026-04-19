@@ -61,11 +61,11 @@ const Gallery = () => {
             whileHover={{ y: -10 }}
             className='bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800'
           >
-            <div className='relative overflow-hidden group h-64'>
+            <div className='relative overflow-hidden group h-80'>
               <motion.img
                 src={item.image}
                 alt={item.title}
-                className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
+                className='w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110'
               />
               {/* Overlay for Desktop */}
               <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 hidden lg:flex flex-col justify-end p-6 transition-opacity duration-300'>
