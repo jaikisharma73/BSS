@@ -31,6 +31,10 @@ import sun_icon from './sun_icon.svg'
 import moon_icon from './moon_icon.svg'
 import security from './X.jpg'
 import logos from './logos.png'
+import sec1 from './sec1.jpeg'
+import sec2 from './sec2.jpeg'
+import sec3 from './sec3.jpeg'
+import sec4 from './sec4.jpeg'
 
 
 export const company_logos = [
@@ -43,6 +47,10 @@ export const company_logos = [
 ]
 
 const assets = {
+  sec1,
+  sec2,
+  sec3,
+  sec4,
   logo,
   logos,
   arrow_icon,

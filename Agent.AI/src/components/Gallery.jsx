@@ -1,41 +1,46 @@
 import React from 'react'
 import { motion } from "motion/react"
 import Title from './Title'
+import sec1 from '../assets/sec1.jpeg'
+import sec2 from '../assets/sec2.jpeg'
+import sec3 from '../assets/sec3.jpeg'
+import sec4 from '../assets/sec4.jpeg'
+
 
 const galleryData = [
   {
     id: 1,
-    image: "",
+    image: sec1,
     title: "Event Security",
     description: "Professional security personnel ensuring the safety of large scale events and gatherings."
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?w=800&auto=format&fit=crop&q=80",
+    image: sec2,
     title: "Corporate Protection",
     description: "Discrete and effective security solutions for corporate offices and executive protection."
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&auto=format&fit=crop&q=80",
+    image: sec3,
     title: "Surveillance Systems",
     description: "State-of-the-art monitoring and CCTV systems with 24/7 technical support."
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1621252179027-94459d278660?w=800&auto=format&fit=crop&q=80",
+    image: sec4,
     title: "Access Control",
     description: "Advanced biometric and card-based access control systems for secure facilities."
   },
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&auto=format&fit=crop&q=80",
+    image: sec1,
     title: "Mobile Patrol",
     description: "Rapid response mobile units providing neighborhood and perimeter security checks."
   },
   {
     id: 6,
-    image: "https://images.unsplash.com/photo-1453873531674-2151bcd01707?w=800&auto=format&fit=crop&q=80",
+    image: sec2,
     title: "VIP Escort",
     description: "Close protection services ensuring secure transportation and personal safety."
   }
@@ -57,11 +62,11 @@ const Gallery = () => {
             whileHover={{ y: -10 }}
             className='bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800'
           >
-            <div className='relative overflow-hidden group h-64'>
+            <div className='relative overflow-hidden group h-[350px] sm:h-[400px]'>
               <motion.img
                 src={item.image}
                 alt={item.title}
-                className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
+                className='w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110'
               />
               {/* Overlay for Desktop */}
               <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 hidden lg:flex flex-col justify-end p-6 transition-opacity duration-300'>

@@ -2,15 +2,13 @@ import React from 'react'
 import { motion } from "motion/react"
 import { Link } from 'react-router-dom'
 import Title from './Title'
+import sec1 from '../assets/sec1.jpeg'
+import sec2 from '../assets/sec2.jpeg'
+import sec3 from '../assets/sec3.jpeg'
+import sec4 from '../assets/sec4.jpeg'
 
-const sliderImages = [
-    "https://images.unsplash.com/photo-1541888031535-715ac9ebf16a?w=800&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1582139329536-e7284fece509?w=800&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1621252179027-94459d278660?w=800&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1453873531674-2151bcd01707?w=800&auto=format&fit=crop&q=80",
-];
+
+const sliderImages = [sec1, sec2, sec3, sec4];
 
 const HomeGallerySlider = () => {
     // We duplicate images to make the loop seamless
@@ -33,8 +31,8 @@ const HomeGallerySlider = () => {
                     transition={{ ease: "linear", duration: 30, repeat: Infinity }}
                 >
                     {duplicatedImages.map((img, i) => (
-                        <div key={i} className="w-[260px] sm:w-[400px] h-[200px] sm:h-[250px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800">
-                            <img src={img} alt="Security gallery slide" className="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-300" />
+                        <div key={i} className="w-[260px] sm:w-[400px] h-[300px] sm:h-[400px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800">
+                            <img src={img} alt="Security gallery slide" className="w-full h-full object-cover object-top grayscale-[30%] hover:grayscale-0 transition-all duration-300" />
                         </div>
                     ))}
                 </motion.div>
