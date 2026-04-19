@@ -62,7 +62,7 @@ const ServiceCard = ({service , index}) => {
                     <p className='text-sm mt-2'>{service.description}</p>
                     
                     <motion.a
-                      href="https://api.whatsapp.com/send?phone=+918840390443&text=Hey there! I want to Book Security"
+                      href="https://api.whatsapp.com/send?phone=+919450221034&text=Hey there! I want to Book Security"
                       target="_blank"
                       className='text-sm mt-4 w-50 flex items-center gap-2 bg-red-700 text-white px-6 py-2 rounded-full cursor-pointer transition-all'
                       whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(174,28,28,0.4)' }}

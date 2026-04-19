@@ -28,7 +28,7 @@ const Navbar = ({ theme, setTheme }) => {
     <>
       {/* Fixed Call Now button - always visible at top center on mobile */}
       <motion.button
-        onClick={() => window.location.href = "tel:+918840390443"}
+        onClick={() => window.location.href = "tel:+919450221034"}
         className={`fixed top-2 left-1/2 -translate-x-1/2 z-30 sm:hidden flex items-center gap-2 px-5 py-2 rounded-lg border shadow-lg text-sm font-semibold ${
           theme === 'dark'
             ? 'bg-black text-white border-gray-600'
@@ -64,7 +64,7 @@ const Navbar = ({ theme, setTheme }) => {
           <a href="/#network" className='nav-glow-hover sm:hover:border-b-0'>Network</a>
           <a href="/#contact-us" className='nav-glow-hover sm:hover:border-b-0'>Contact</a>
           <motion.button
-            onClick={() => window.location.href = "tel:+918840390443"}
+            onClick={() => window.location.href = "tel:+919450221034"}
             className="flex items-center gap-2 text-black dark:text-white border border-gray-400 px-5 py-2 rounded-lg bg-white dark:bg-black"
             whileHover={{ scale: 1.05, boxShadow: '0 0 12px rgba(174,28,28,0.3)' }}
             whileTap={{ scale: 0.95 }}
@@ -85,7 +85,7 @@ const Navbar = ({ theme, setTheme }) => {
           />
 
           <motion.a
-            href="https://api.whatsapp.com/send?phone=+918840390443&text=Hey there! I want to book security"
+            href="https://api.whatsapp.com/send?phone=+919450221034&text=Hey there! I want to book security"
             target="_blank"
             className='text-sm max-sm:hidden flex items-center gap-2 bg-red-700 text-white px-6 py-2 rounded-full cursor-pointer'
             whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(174,28,28,0.4)' }}
@@ -141,7 +141,7 @@ const Navbar = ({ theme, setTheme }) => {
 
         {/* Call Now button inside sidebar */}
         <motion.button
-          onClick={() => { setSidebarOpen(false); window.location.href = "tel:+918840390443"; }}
+          onClick={() => { setSidebarOpen(false); window.location.href = "tel:+919450221034"; }}
           className={`flex items-center gap-2 border px-5 py-2 rounded-lg mt-4 ${
             theme === 'dark'
               ? 'text-white border-gray-600 bg-black'
@@ -155,7 +155,7 @@ const Navbar = ({ theme, setTheme }) => {
 
         {/* WhatsApp Connect button inside sidebar */}
         <motion.a
-          href="https://api.whatsapp.com/send?phone=+918840390443&text=Hey there! I want to book security"
+          href="https://api.whatsapp.com/send?phone=+919450221034&text=Hey there! I want to book security"
           target="_blank"
           onClick={() => setSidebarOpen(false)}
           className='flex items-center gap-2 bg-red-700 text-white px-5 py-2 rounded-full cursor-pointer text-sm mt-2 justify-center'

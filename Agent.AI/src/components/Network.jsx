@@ -436,7 +436,7 @@ const Network = () => {
         </div>
         <div className='flex gap-3 flex-shrink-0 relative z-10'>
           <motion.a
-            href='https://api.whatsapp.com/send?phone=+918840390443&text=Hey there! I need security services'
+            href='https://api.whatsapp.com/send?phone=+919450221034&text=Hey there! I need security services'
             target='_blank'
             className='bg-white text-red-700 font-semibold text-sm px-6 py-3 rounded-full flex items-center gap-2'
             whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(255,255,255,0.3)' }}
@@ -445,7 +445,7 @@ const Network = () => {
             💬 WhatsApp Us
           </motion.a>
           <motion.a
-            href='tel:+918840390443'
+            href='tel:+919450221034'
             className='border-2 border-white text-white text-sm px-6 py-3 rounded-full hover:bg-white/10 transition-all'
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

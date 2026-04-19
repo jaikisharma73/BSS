@@ -71,14 +71,14 @@ const ContactUs = () => {
       >
         {[
           {
-            href: 'tel:+918840390443',
+            href: 'tel:+919450221034',
             icon: '📞',
             label: 'Call Us',
-            value: '+91 88403 90443',
+            value: '+91 94502 21034',
             hoverColor: 'hover:border-red-500 hover:shadow-red-500/20',
           },
           {
-            href: 'https://api.whatsapp.com/send?phone=+918840390443&text=Hey there!',
+            href: 'https://api.whatsapp.com/send?phone=+919450221034&text=Hey there!',
             target: '_blank',
             icon: '💬',
             label: 'WhatsApp',
